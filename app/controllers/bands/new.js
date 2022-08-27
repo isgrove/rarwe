@@ -19,12 +19,12 @@ export default class BandsNewController extends Controller {
       if (transition.isAborted) {
         return;
       }
-      if (transition.confirmedLeave) {
+      if (this.confirmedLeave) {
         return;
       }
       if (transition.from.name === 'bands.new') {
         if (this.name) {
-          let leave = window.confirm('You have unsaved changes. Are you sure?'); // not sure why this window is displayed twice
+          let leave = window.confirm('You have unsaved changes. Are you sure?');
           if (leave) {
             this.confirmedLeave = true;
           } else {
